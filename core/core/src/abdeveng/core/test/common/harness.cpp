@@ -22,7 +22,7 @@
 
 #include <abdeveng/core/test/common/harness.h>
 
-#include <abdeveng/core/service/logger.h>
+#include <abdeveng/core/logging/common/logger.h>
 
 /* PUBLIC */
 
@@ -55,7 +55,7 @@ void CTestHarness::Run() {
         GetLogger().Log("----------------");
 
         // only enable logging from the test when logging verbose
-        GetLogger().SetEnabledLogger(IsVerboseLogging());
+        GetLogger().SetEnabled(IsVerboseLogging());
 
         // reset the failed last test flag
         SetFailedLastTest(false);
@@ -64,7 +64,7 @@ void CTestHarness::Run() {
         GetTestCase(i).Run(dut, GetTestCaseConfig(i), GetEvaluator(), GetLogger());
 
         // reenable the logger if it was off
-        GetLogger().SetEnabledLogger(true);
+        GetLogger().SetEnabled(true);
 
         // print test result
         GetLogger().Log("----------------");
@@ -97,7 +97,7 @@ volatile void* CTestHarness::GetDUT() const {
     return m_test_harness_config.dut;
 }
 
-ILogger& CTestHarness::GetLogger() const {
+CLogger& CTestHarness::GetLogger() const {
     return *m_test_harness_config.logger;
 }
 

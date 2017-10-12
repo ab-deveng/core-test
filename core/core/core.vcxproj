@@ -11,11 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\abdeveng\core\service\logger.h" />
+    <ClInclude Include="include\abdeveng\core\logging\common\logger.h" />
     <ClInclude Include="include\abdeveng\core\test\common\evaluator.h" />
     <ClInclude Include="include\abdeveng\core\test\common\harness.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\abdeveng\core\logging\common\logging.cpp" />
     <ClCompile Include="src\abdeveng\core\test\common\evaluator.cpp" />
     <ClCompile Include="src\abdeveng\core\test\common\harness.cpp" />
   </ItemGroup>
@@ -33,7 +34,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
